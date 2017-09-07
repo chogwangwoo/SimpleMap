@@ -77,16 +77,20 @@ class ViewController: UIViewController, MKMapViewDelegate {
  func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         
         print("callout Accessory Tapped!")
-        
-//        let viewAnno = view.annotation
-//        let viewTitle: String = ((viewAnno?.title)!)!
-//        let viewSubTitle: String = ((viewAnno?.subtitle)!)!
-        
-//        print("\(viewTitle) \(viewSubTitle)")
-        
-//        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .alert)
-//        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//        present(ac, animated: true, completion: nil)
-   }
+    
 
+        let viewAnno = view.annotation
+        let viewTitle: String = ((viewAnno?.title)!)!
+        let viewSubTitle: String = ((viewAnno?.subtitle)!)!
+        
+        print("\(viewTitle) \(viewSubTitle)")
+        
+        let ac = UIAlertController(title: viewTitle, message: viewSubTitle, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        ac.addAction(UIAlertAction(title: "DELELTE", style: .destructive, handler: nil))
+    
+        present(ac, animated: true, completion: nil)
+
+
+    }
 }
